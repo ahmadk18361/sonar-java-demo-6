@@ -53,6 +53,9 @@ pipeline {
                 bat 'mvn clean packages'
             }
         }
+    bat 'echo %CD%'
+    bact 'dir'
+    bat 'mvn clean verify sonar:sonar -Dsonar.projectkey=...'
         
     stage('SonarQube Scan') {
             steps {
