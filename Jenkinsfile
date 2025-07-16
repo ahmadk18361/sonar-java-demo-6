@@ -64,12 +64,12 @@ pipeline {
                         bat 'mvn sonar:sonar -Dsonar.token=$SONAR_TOKEN'
                          bat 'echo Sonar token: %SONAR_TOKEN'
                        bat """
-                       mvn clean verify sonar:sonar/
-                          -Dsonar.projectKey=Sonar-cve-s/
-                          -Dsonar.projectName='Sonar-cve's'/
-                          -Dsonar.host.url=http://localhost:9000/
-                          -Dsonar.sources=src/main/java/com/example/ .
-                          -Dsonar.token=sqp_b08b8163f360aa6cb24534b5c579de0a58f6211f
+                       mvn clean verify sonar:sonar \
+                          -Dsonar.projectKey=sonar-cve-fix6 \
+                          -Dsonar.projectName='sonar-cve-fix6' \
+                          -Dsonar.host.url=http://localhost:9000 \
+                          -Dsonar.sources=src/main/java/com/example
+                          -Dsonar.token=sqp_3a36962ee2a3f977b035d9ea00e70025a997b69a
                         """
                     }
                 }
