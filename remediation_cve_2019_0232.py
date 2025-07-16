@@ -16,12 +16,16 @@ def remediate_file(file_path):
         direct_match = re.search(r'Runtime\.getRuntime\(\)\.exec\s*\(\s*["\']?.*["\']?\s*\)', line)
         # Match exec(command) usage separately
         indirect_match = re.search(r'Runtime\.getRuntime\(\)\.exec\s*\(\s*\w+\s*\)', line)
+        #expannd
+        exec_match = re.search(r'Runtime\.getRuntime\(\)\.exec\s*\(', line)
 
-        if direct_match or indirect_match:
-            new_lines.append(f"{SAFE_COMMAND}\n")
-            modified = True
-        else:
-            new_lines.append(line)
+
+    if direct_match or indirect_match or exec_match:
+        new_lines.append(f"{SAFE_COMMAND}\n")
+        modified = True
+    else:
+        new_lines.append(line)
+
 
     if modified:
         with open(file_path, 'w') as file:
