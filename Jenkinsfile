@@ -14,7 +14,7 @@ pipeline {
           steps {
             checkout([$class: 'GitSCM',
               branches: [[name: '*/main']],
-              userRemoteConfigs: [[url: 'https://github.com/ahmadk18361/sonar-java-demo-2.git']],
+              userRemoteConfigs: [[url: 'https://github.com/ahmadk18361/sonar-java-demo-6.git']],
               extensions: [[$class: 'CloneOption', noTags: false, shallow: false, depth: 0]]
             ])
           }
