@@ -1,7 +1,7 @@
 import os
 import re
 
-SOURCE_DIR = "src/main/java/com/example/"
+SOURCE_DIR = 'src/main/java/com/example/'
 
 SAFE_COMMAND = 'System.out.println("Command sanitized");'
 
